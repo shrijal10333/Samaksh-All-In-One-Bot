@@ -1,0 +1,11 @@
+*
+!src/
+!src/**
+!package.json
+!README.md
+!LICENSE
+!render.yaml
+!.env.example
+!.gitignore
+src/.command_hash
+tempassets/
