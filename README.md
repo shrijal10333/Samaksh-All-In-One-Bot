@@ -441,7 +441,7 @@ src/
 
 **Samaksh Bot**
 
-[GitHub](https://github.com/SamakshBot)
+[GitHub](https://github.com/shrijal10333)
 
 ### 🤖 Project
 
@@ -459,9 +459,47 @@ Join the **Samaksh Bot** Discord community.
 
 <div align="center">
 
-[![Join Discord](https://img.shields.io/badge/💜_JOIN_SUPPORT_SERVER-5865F2?style=for-the-badge\&logo=discord\&logoColor=white)](https://discord.gg/aerox)
+[![Join Discord](https://img.shields.io/badge/💜_JOIN_SUPPORT_SERVER-5865F2?style=for-the-badge\&logo=discord\&logoColor=white)](https://discord.gg/g9EBnEAs8Y)
 
 </div>
+
+---
+
+# 🚀 Easy 24/7 Deployment (Render + UptimeRobot)
+
+### 🟢 1. Render.com Deployment Setup
+
+1. Go to **[Render.com](https://render.com)** and log in with your GitHub account.
+2. Click **New +** → Select **Web Service**.
+3. Connect your repository: `shrijal10333/Samaksh-All-In-One-Bot`.
+4. Fill in the deployment details:
+   - **Name:** `samaksh-bot`
+   - **Environment:** `Node`
+   - **Build Command:** `npm install`
+   - **Start Command:** `npm start`
+5. Under **Environment Variables**, add the following keys:
+   - `BOT_TOKEN` = *Your Discord Bot Token*
+   - `CLIENT_ID` = `1428392919567437945`
+   - `OWNER_ID` = `986687943789932656`
+   - `DATABASE_URL` = *Your PostgreSQL Database Connection String*
+   - `GROQ_API_KEY` = *Your Groq API Key*
+   - `SERPAPI_KEY` = *Your SerpAPI Key*
+6. Click **Deploy Web Service**!
+
+---
+
+### ⏰ 2. 24/7 Uptime Setup (UptimeRobot / Uptimer)
+
+Render free tier web services pause if no HTTP request is received for 15 minutes. Samaksh Bot includes a built-in Keep-Alive HTTP server listening on `/`.
+
+1. Copy your Render app URL: `https://<your-app-name>.onrender.com`.
+2. Go to **[UptimeRobot.com](https://uptimerobot.com)** (or any Uptimer bot).
+3. Click **Add New Monitor**:
+   - **Monitor Type:** `HTTP(s)`
+   - **Friendly Name:** `Samaksh Bot Keep-Alive`
+   - **URL / IP:** `https://<your-app-name>.onrender.com`
+   - **Monitoring Interval:** Every `5 minutes`
+4. Click **Create Monitor**. Your bot will now stay **online 24/7** without sleeping!
 
 ---
 

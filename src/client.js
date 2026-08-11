@@ -222,7 +222,8 @@ process.on('uncaughtException', (error) => {
       startAnimalRefresh();
 
       const { startBackgroundRefresh } = require('./lib/pfpApi');
-      startBackgroundRefresh();
+      const { startKeepAliveServer } = require('./lib/keepAlive');
+      startKeepAliveServer();
     } catch (error) {
       printError('Failed to initialize database-dependent systems: ' + error.message);
     }
