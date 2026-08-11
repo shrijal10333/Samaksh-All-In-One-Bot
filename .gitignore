@@ -1,11 +1,5 @@
-*
-!src/
-!src/**
-!package.json
-!README.md
-!LICENSE
-!render.yaml
-!.env.example
-!.gitignore
+node_modules/
+.env
 src/.command_hash
 tempassets/
+*.log
