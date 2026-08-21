@@ -1,12 +1,21 @@
+require('dotenv').config();
 const { Pool } = require('pg');
 const config = require('../config.js');
 
+const dbUrl = process.env.DATABASE_URL || config.DATABASE_URL;
+
+// Cloud databases (Neon, Render, Supabase, Railway) require SSL, local databases usually do not.
+const requiresSsl = dbUrl && (
+    dbUrl.includes('render.com') ||
+    dbUrl.includes('neon.tech') ||
+    dbUrl.includes('supabase') ||
+    dbUrl.includes('railway') ||
+    dbUrl.includes('sslmode=require')
+);
+
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || config.DATABASE_URL,
-    ssl: {
-        require: true,
-        rejectUnauthorized: false
-    },
+    connectionString: dbUrl,
+    ssl: requiresSsl ? { rejectUnauthorized: false } : false,
     max: 10,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 10000
